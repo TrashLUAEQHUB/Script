@@ -1,0 +1,267 @@
+
+local G2L = {};
+G2L["1"] = Instance.new("ScreenGui", game.CoreGui);
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(50, 50, 50);
+G2L["2"]["Size"] = UDim2.new(0, 371, 0, 157);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Position"] = UDim2.new(0.40282130241394043, 0, 0.40827038884162903, 0);
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["4"] = Instance.new("UIStroke", G2L["2"]);
+G2L["4"]["Color"] = Color3.fromRGB(255, 255, 255);
+G2L["5"] = Instance.new("LocalScript", G2L["4"]);
+G2L["6"] = Instance.new("LocalScript", G2L["2"]);
+G2L["7"] = Instance.new("TextLabel", G2L["2"]);
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(36, 36, 36);
+G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["7"]["TextSize"] = 14;
+G2L["7"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["Size"] = UDim2.new(0, 371, 0, 24);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Text"] = [[SKIBIDI DOM DOM YES YES HUB]];
+G2L["7"]["Name"] = [[TITLE]];
+G2L["7"]["Position"] = UDim2.new(0, 0, -0.002997331554070115, 0);
+G2L["8"] = Instance.new("UIStroke", G2L["7"]);
+G2L["8"]["Color"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["Thickness"] = 0.6000000238418579;
+G2L["9"] = Instance.new("LocalScript", G2L["8"]);
+G2L["a"] = Instance.new("LocalScript", G2L["7"]);
+G2L["b"] = Instance.new("TextButton", G2L["2"]);
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["b"]["TextSize"] = 14;
+G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Text"] = [[HitBox]];
+G2L["b"]["Position"] = UDim2.new(0.2291105091571808, 0, 0.337579607963562, 0);
+G2L["c"] = Instance.new("TextLabel", G2L["b"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["c"]["TextSize"] = 14;
+G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["Size"] = UDim2.new(0, 200, 0, 14);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Text"] = [[OFF]];
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["Position"] = UDim2.new(0, 0, 1, 0);
+G2L["d"] = Instance.new("LocalScript", G2L["b"]);
+local function C_5()
+local script = G2L["5"];
+	local uiStroke = script.Parent 
+	local colors = {
+		Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 64, 0), Color3.fromRGB(255, 128, 0),
+		Color3.fromRGB(255, 183, 0), Color3.fromRGB(255, 234, 0), Color3.fromRGB(212, 255, 0),
+		Color3.fromRGB(102, 255, 0), Color3.fromRGB(38, 255, 0), Color3.fromRGB(0, 255, 21),
+		Color3.fromRGB(0, 255, 94), Color3.fromRGB(0, 255, 140), Color3.fromRGB(0, 255, 179),
+		Color3.fromRGB(0, 255, 225), Color3.fromRGB(0, 255, 255), Color3.fromRGB(0, 195, 255),
+		Color3.fromRGB(0, 132, 255), Color3.fromRGB(0, 89, 255), Color3.fromRGB(0, 4, 255),
+		Color3.fromRGB(119, 0, 255), Color3.fromRGB(149, 0, 255), Color3.fromRGB(191, 0, 255),
+		Color3.fromRGB(247, 0, 255), Color3.fromRGB(255, 0, 166), Color3.fromRGB(255, 0, 68),
+		Color3.fromRGB(255, 0, 4)
+	}
+	while true do
+		for _, color in ipairs(colors) do
+			uiStroke.Color = color
+			wait(0) 
+		end
+	end
+end;
+task.spawn(C_5);local function C_6()
+local script = G2L["6"];
+	local frame = script.Parent
+	local userInput = game:GetService("UserInputService")
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+			frame.BackgroundTransparency = 0.7  
+			frame.TITLE.BackgroundTransparency = 0.7  
+			frame.TextButton.BackgroundTransparency = 0.7
+			frame.TextButton.TextLabel.TextTransparency = 0.7
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+					frame.BackgroundTransparency = 0  
+					frame.TITLE.BackgroundTransparency = 0
+					frame.TextButton.BackgroundTransparency = 0
+					frame.TextButton.TextLabel.TextTransparency = 0
+				end
+			end)
+		end
+	end)
+	frame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	userInput.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			local delta = input.Position - dragStart
+			frame.Position = UDim2.new(
+				startPos.X.Scale,
+				startPos.X.Offset + delta.X,
+				startPos.Y.Scale,
+				startPos.Y.Offset + delta.Y
+			)
+		end
+	end)
+end;
+task.spawn(C_6);
+local function C_9()
+local script = G2L["9"];
+	local uiStroke = script.Parent 
+	local colors = {
+		Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 64, 0), Color3.fromRGB(255, 128, 0),
+		Color3.fromRGB(255, 183, 0), Color3.fromRGB(255, 234, 0), Color3.fromRGB(212, 255, 0),
+		Color3.fromRGB(102, 255, 0), Color3.fromRGB(38, 255, 0), Color3.fromRGB(0, 255, 21),
+		Color3.fromRGB(0, 255, 94), Color3.fromRGB(0, 255, 140), Color3.fromRGB(0, 255, 179),
+		Color3.fromRGB(0, 255, 225), Color3.fromRGB(0, 255, 255), Color3.fromRGB(0, 195, 255),
+		Color3.fromRGB(0, 132, 255), Color3.fromRGB(0, 89, 255), Color3.fromRGB(0, 4, 255),
+		Color3.fromRGB(119, 0, 255), Color3.fromRGB(149, 0, 255), Color3.fromRGB(191, 0, 255),
+		Color3.fromRGB(247, 0, 255), Color3.fromRGB(255, 0, 166), Color3.fromRGB(255, 0, 68),
+		Color3.fromRGB(255, 0, 4)
+	}
+	while true do
+		for _, color in ipairs(colors) do
+			uiStroke.Color = color -- Change the UIStroke color
+			wait(0.1) -- Smooth transition
+		end
+	end
+	
+end;
+task.spawn(C_9);
+-- StarterGui.ScreenGui.Frame.TITLE.LocalScript
+local function C_a()
+local script = G2L["a"];
+	while wait() do
+		local Background = script.Parent
+		Background.BorderColor3 = Color3.fromRGB(255, 0, 0)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(255, 64, 0)
+		wait(0)
+	
+		Background.BorderColor3 = Color3.fromRGB(255, 128, 0)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(255, 183, 0)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(255, 234, 0)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(212, 255, 0)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(102, 255, 0)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(38, 255, 0)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 255, 21)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 255, 94)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 255, 140)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 255, 179)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 255, 225)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 255, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 195, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 132, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 89, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(0, 4, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(119, 0, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(149, 0, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(191, 0, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(247, 0, 255)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(255, 0, 166)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(255, 0, 68)
+		wait(0)
+		Background.BorderColor3 = Color3.fromRGB(255, 0, 4)
+	end
+end;
+task.spawn(C_a);
+-- StarterGui.ScreenGui.Frame.TextButton.LocalScript
+local function C_d()
+local script = G2L["d"];
+local function s()
+    local bg = script.Parent
+    local Players = game:GetService("Players")
+    
+    if bg.BackgroundColor3 == Color3.fromRGB(0, 255, 0) then
+        bg.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+        script.Parent.TextLabel.Text = "OFF"
+        
+        for _, player in pairs(Players:GetPlayers()) do
+            local character = player.Character
+            if character then
+                local hitbox = character:FindFirstChild("Hitbox")
+                if hitbox then
+                    hitbox:Destroy()
+                end
+            end
+        end
+
+    else
+        bg.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+        script.Parent.TextLabel.Text = "ON"
+        
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= game.Players.LocalPlayer then
+                local character = player.Character
+                if character then
+                    local rootPart = character:FindFirstChild("HumanoidRootPart")
+                    if rootPart then
+                        local existingHitbox = character:FindFirstChild("Hitbox")
+                        if not existingHitbox then
+                            local hitbox = Instance.new("Part")
+                            hitbox.Size = rootPart.Size + Vector3.new(5, 5, 5) 
+                            hitbox.Position = rootPart.Position
+                            hitbox.Color = Color3.fromRGB(255, 0, 0)
+                            hitbox.CanCollide = false
+                            hitbox.Anchored = false
+                            hitbox.Massless = true
+                            hitbox.Name = "Hitbox"
+                            hitbox.Parent = character
+
+                            hitbox.Transparency = 0.8
+
+                            local weld = Instance.new("WeldConstraint")
+                            weld.Part0 = rootPart
+                            weld.Part1 = hitbox
+                            weld.Parent = hitbox
+
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+script.Parent.MouseButton1Click:Connect(s)
+
+
+
+	
+end;
+task.spawn(C_d);
+
+return G2L["1"], require;
